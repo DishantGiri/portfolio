@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import hero_image from '../assets/hero.png'
 import './Hero.css'
 import download_icon from '../assets/download-icon.png'
+import Social from './Social'
+
 
 const Hero = () => {
   const skills = ['FullStack Developer', 'UI/UX Designer', 'Problem Solver', 'Creative Thinker'];

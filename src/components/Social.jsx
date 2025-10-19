@@ -8,17 +8,17 @@ import './Social.css'
 const Social = () => {
   return (
     <div className="social">
-        <a href="https://www.facebook.com/dishantgiri127" target='#'>
-        <img src={facebook} alt="" />
+        <a href="https://www.facebook.com/dishantgiri127" target="_blank" rel="noopener noreferrer">
+            <img src={facebook} alt="Facebook" />
         </a>
-        <a href="" target='#'>
-        <img src={linkedin} alt="" />
+        <a href="#" target="_blank" rel="noopener noreferrer">
+            <img src={linkedin} alt="LinkedIn" />
         </a>
-        <a href="https://github.com/DishantGiri" target='#'>
-        <img src={github} alt="" />
+        <a href="https://github.com/DishantGiri" target="_blank" rel="noopener noreferrer">
+            <img src={github} alt="GitHub" />
         </a>
-        <a href="https://www.instagram.com/dishant.java/" target='#'>
-        <img src={instagram} alt="" style={{borderRadius: '8px'}}/>
+        <a href="https://www.instagram.com/dishant.java/" target="_blank" rel="noopener noreferrer">
+            <img src={instagram} alt="Instagram" style={{borderRadius: '8px'}}/>
         </a>
     </div>
   )
