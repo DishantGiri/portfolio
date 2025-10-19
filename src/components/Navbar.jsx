@@ -22,7 +22,8 @@ const Navbar = () => {
                 <ul className="desktop-menu">
                     <li>Home</li>
                     <li>About Me</li>
-                    <li>Projects</li>             
+                    <li>Projects</li>     
+                    <li>Skills</li>        
                 </ul>
                 
                 <button className='btn contact'>
