@@ -12,7 +12,6 @@
   -webkit-backdrop-filter: blur(10px) saturate(180%);
   font-size: 1.3em;
   color: white;
-  
 }
 
 .nav-bar ul{
@@ -27,7 +26,7 @@
 }
 
 .nav-bar ul li:hover{
-color: rgb(227, 89, 30);
+  color: rgb(227, 89, 30);
 }
 
 .btn{
@@ -116,12 +115,12 @@ color: rgb(227, 89, 30);
   backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* Changed from center to flex-start */
   align-items: center;
   z-index: 9;
   transform: translateX(100%);
   transition: transform 0.3s ease;
-  padding-top: 60px; /* Add top padding to account for hamburger */
+  padding-top: 100px; /* Increased padding to push content down from top */
 }
 
 .mobile-menu.active {
@@ -133,11 +132,11 @@ color: rgb(227, 89, 30);
   text-align: center;
   padding: 0;
   width: 100%;
-  margin-top: 20px; /* Additional top spacing */
+  margin-top: 0; /* Removed extra margin since we're using flex-start */
 }
 
 .mobile-menu ul li {
-  margin: 25px 0;
+  margin: 20px 0; /* Reduced margin to make items closer together */
   font-size: 1.3em;
   cursor: pointer;
   transition: color 0.3s ease;
@@ -152,7 +151,7 @@ color: rgb(227, 89, 30);
 }
 
 .mobile-btn {
-  margin-top: 30px;
+  margin-top: 20px; /* Reduced margin */
   color: white;
   padding: 12px 30px;
   border: 1px solid rgb(227, 89, 30);

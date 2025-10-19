@@ -49,6 +49,7 @@ const Navbar = () => {
                     <li onClick={closeMenu}>Home</li>
                     <li onClick={closeMenu}>About Me</li>
                     <li onClick={closeMenu}>Projects</li>
+                    <li onClick={closeMenu}>Skills</li> {/* Added Skills item */}
                 </ul>
                 <button className='mobile-btn' onClick={closeMenu}>
                     Contact Me
