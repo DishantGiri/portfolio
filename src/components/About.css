@@ -91,7 +91,7 @@
     }
     
     .about-right p {
-      text-align: left;
+      text-align: justify;
     }
   }
   
@@ -113,5 +113,6 @@
     .about-right p {
       font-size: 1rem;
       padding: 15px 15px 15px 20px;
+      text-align: justify;
     }
   }
