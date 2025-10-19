@@ -24,6 +24,9 @@
 .nav-bar ul li{
     cursor: pointer;
 }
+.nav-bar ul li:hover{
+  color: rgb(227, 89, 30);
+}
 
 .btn{
     position: relative; 

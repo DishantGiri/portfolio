@@ -1,0 +1,116 @@
+.about {
+    margin: 80px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    min-height: 70vh;
+  }
+  
+  .about-left {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 40%; /* 40% width */
+  }
+  
+  .about-left img {
+    height: 320px;
+    width: 320px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 
+      0 8px 25px rgba(227, 89, 30, 0.3),
+      0 0 0 3px rgba(227, 89, 30, 0.1),
+      0 0 0 6px rgba(227, 89, 30, 0.05);
+    border: 2px solid #e3591e;
+    transition: all 0.3s ease;
+  }
+  
+  .about-left img:hover {
+    box-shadow: 
+      0 12px 35px rgba(227, 89, 30, 0.4),
+      0 0 0 3px rgba(227, 89, 30, 0.15);
+  }
+  
+  .about-right {
+    flex: 60%; /* 60% width */
+    padding: 40px;
+    background: rgba(30, 30, 30, 0.7);
+    border-radius: 20px;
+    border-left: 4px solid #e3591e;
+    box-shadow: 
+      0 10px 30px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .about-right p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #e0e0e0;
+    margin-bottom: 25px;
+    text-align: justify;
+    padding: 20px 20px 20px 25px;
+    border-radius: 12px;
+    border-left: 4px solid #e3591e;
+    background: rgba(227, 89, 30, 0.08);
+    position: relative;
+  }
+  
+  .about-right p:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 968px) {
+    .about {
+      flex-direction: column;
+      text-align: center;
+      gap: 50px;
+      margin: 60px 30px;
+    }
+    
+    .about-left,
+    .about-right {
+      flex: none;
+      width: 100%;
+    }
+    
+    .about-left img {
+      height: 280px;
+      width: 280px;
+    }
+    
+    .about-right {
+      max-width: 100%;
+      padding: 30px;
+    }
+    
+    .about-right p {
+      text-align: left;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .about {
+      margin: 40px 20px;
+      gap: 40px;
+    }
+    
+    .about-left img {
+      height: 240px;
+      width: 240px;
+    }
+    
+    .about-right {
+      padding: 25px 20px;
+    }
+    
+    .about-right p {
+      font-size: 1rem;
+      padding: 15px 15px 15px 20px;
+    }
+  }
