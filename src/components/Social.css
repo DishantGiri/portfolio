@@ -1,0 +1,22 @@
+.social{
+    position: fixed;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 200px;
+    margin-right: 40px;
+    
+
+}
+.social img{
+    background: rgb(0, 0, 0);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.social img:hover{
+    background-color: rgb(227, 89, 30);
+}

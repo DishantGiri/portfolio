@@ -1,0 +1,97 @@
+.hero{
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+.left img{
+    height: 474;
+    width: 575px;
+    object-fit: contain;
+}
+.right {
+    margin-right: 100px;
+    margin-bottom: 100px; 
+    width: 600px;
+    
+}
+.right h1{
+    text-align: left;
+    font-size: 5em;
+    margin-bottom: 10px; /* Reduced margin to bring skills closer */
+}
+
+/* Typing Animation Styles */
+.skills-container {
+    margin-top: 0; /* Changed from 20px to 0 */
+}
+
+.typing-subtitle {
+    font-size: 2em;
+    font-weight: 400;
+    color: rgb(227, 89, 30);
+    text-align: left;
+    margin: 0;
+}
+
+.typing-text {
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    min-height: 1.2em;
+    display: inline-block;
+}
+
+.cursor {
+    animation: blink 1s infinite;
+    color: rgb(227, 89, 30);
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        margin-top: 40px;
+    }
+    
+    .right {
+        margin-right: 0;
+        margin-bottom: 50px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .right h1 {
+        text-align: center;
+        font-size: 3em;
+        margin-bottom: 5px; /* Reduced for mobile too */
+    }
+    
+    .typing-subtitle {
+        font-size: 1.8em;
+        text-align: center;
+    }
+    
+    .left img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+    .right .btn{
+            justify-content: center;
+            margin: 20px auto 0;
+            display: flex;
+        
+    }
+}
