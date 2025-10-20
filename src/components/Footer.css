@@ -1,0 +1,20 @@
+.footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: transparent; /* or match your site background */
+  }
+  
+  .footer-line {
+    width: 90%;
+    margin: 0 auto 8px;
+    border: none;
+    height: 1px;
+    background-color: #ccc; /* line color */
+  }
+  
+  .footer-text {
+    font-size: 0.9rem;
+    color: #555;
+    font-family: 'Poppins', sans-serif;
+  }
+  

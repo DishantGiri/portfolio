@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import './Contact.css';
 import facebook from '../assets/facebook1.png';
 import linkedin from '../assets/linkedin1.png';
@@ -8,63 +8,39 @@ import send_icon from '../assets/send.png';
 import location from '../assets/location.png';
 import mail from '../assets/email1.png';
 import phone from '../assets/phone1.png';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-
+  const form = useRef();
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(null);
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = async (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
     setLoading(true);
     setSuccess(null);
 
-    const data = {
-      access_key: 'a34216d8-d503-4dff-b344-b7c6cf81cd87', // Replace with your Web3Forms key
-      name: formData.name,
-      email: formData.email,
-      subject: formData.subject,
-      message: formData.message,
-      redirect: '', // Optional: add a redirect URL
-    };
-
-    try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
+    emailjs
+      .sendForm(
+        'service_tn0vhdu',   // Replace with your EmailJS service ID
+        'template_fvzgych',  // Replace with your template ID
+        form.current,
+        { publicKey: '1T5xKxj0pnhP0jw2g' }  // Replace with your public key
+      )
+      .then(
+        () => {
+          setSuccess(true);
+          setLoading(false);
+          form.current.reset(); // Clear form
+          setTimeout(() => setSuccess(null), 5000); // Hide after 5s
         },
-        body: JSON.stringify(data),
-      });
-
-      const result = await response.json();
-
-      if (result.success) {
-        setSuccess(true);
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      } else {
-        setSuccess(false);
-      }
-    } catch (error) {
-      console.error('Web3Forms error:', error);
-      setSuccess(false);
-    }
-
-    setLoading(false);
+        (error) => {
+          console.error('FAILED...', error.text);
+          setSuccess(false);
+          setLoading(false);
+          setTimeout(() => setSuccess(null), 5000); // Hide after 5s
+        }
+      );
   };
 
   return (
@@ -72,7 +48,7 @@ const Contact = () => {
       <div className="contact-container">
         {/* Contact Form */}
         <div className="contact-form-section">
-          <form className="contact-form" onSubmit={handleSubmit}>
+          <form ref={form} className="contact-form" onSubmit={sendEmail}>
             <div className="form-title-background">
               <h2 className="section-title-left">Send a Message</h2>
             </div>
@@ -80,50 +56,22 @@ const Contact = () => {
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="name">Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
+                <input type="text" name="name" id="name" required />
               </div>
               <div className="form-group">
                 <label htmlFor="email">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
+                <input type="email" name="email" id="email" required />
               </div>
             </div>
 
             <div className="form-group">
               <label htmlFor="subject">Subject</label>
-              <input
-                type="text"
-                name="subject"
-                id="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                required
-              />
+              <input type="text" name="subject" id="subject" required />
             </div>
 
             <div className="form-group">
               <label htmlFor="message">Message</label>
-              <textarea
-                name="message"
-                id="message"
-                rows="5"
-                value={formData.message}
-                onChange={handleChange}
-                required
-              ></textarea>
+              <textarea name="message" id="message" rows="5" required></textarea>
             </div>
 
             <button type="submit" className="submit-btn" disabled={loading}>
