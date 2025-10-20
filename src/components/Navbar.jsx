@@ -36,10 +36,12 @@ const Navbar = () => {
         </ul>
 
         {/* Contact Button */}
-        <button className="btn contact">
-          <span>Contact Me</span>
-          <img src={mail_icon} alt="" className="button-icon" />
-        </button>
+        <a href="#contact">
+          <button className="btn contact">
+            <span>Contact Me</span>
+            <img src={mail_icon} alt="" className="button-icon" />
+          </button>
+        </a>
 
         {/* Hamburger Button - Mobile */}
         <button
@@ -69,10 +71,12 @@ const Navbar = () => {
             <a href="#projects">Projects</a>
           </li>
         </ul>
-
+        <a href="#contact">
         <button className="mobile-btn" onClick={closeMenu}>
           Contact Me
         </button>
+        </a>
+
       </div>
     </div>
   );

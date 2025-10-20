@@ -67,7 +67,7 @@
   padding-bottom: 100px;
 } 
 
-.btn:hover .button-icon{
+.btn:hover .button-icon, .submit-btn:hover .button-icon{
   transform: translate(-50%, -50%) scale(1); /* show icon */
   padding-bottom: 0px;
   transition: ease 0.3s;
