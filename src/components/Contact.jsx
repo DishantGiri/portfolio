@@ -142,17 +142,17 @@ const Contact = () => {
           <div className="contact-info">
             <div className="contact-item">
               <div className="contact-icon">
-                <img src={mail} alt="Email Icon" style={{ width: '24px', height: '24px' }} />
+                <img src={mail} alt="Email Icon" />
               </div>
               <div className="contact-details">
                 <h3>Email</h3>
-                <p>dishantgiri22@gmail.com</p>
+                <p>dishantgir22@gmail.com</p>
               </div>
             </div>
 
             <div className="contact-item">
               <div className="contact-icon">
-                <img src={phone} alt="Phone Icon" style={{ width: '24px', height: '24px' }} />
+                <img src={phone} alt="Phone Icon" />
               </div>
               <div className="contact-details">
                 <h3>Phone</h3>
@@ -162,7 +162,7 @@ const Contact = () => {
 
             <div className="contact-item">
               <div className="contact-icon">
-                <img src={location} alt="Location Icon" style={{ width: '24px', height: '24px' }} />
+                <img src={location} alt="Location Icon" />
               </div>
               <div className="contact-details">
                 <h3>Location</h3>

@@ -143,15 +143,16 @@
     transform: translateX(5px);
 }
 
-.contact-icon {
-    font-size: 1.2em;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Strictly target contact info icons only */
+.contact-info .contact-item .contact-icon img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    border-radius: 0;
+    background: transparent;
 }
 
+/* Contact Details */
 .contact-details h3 {
     margin: 0 0 5px 0;
     color: rgb(227, 89, 30);
@@ -223,22 +224,29 @@
     }
     
     .contact-info-section {
-        text-align: center;
+        text-align: left; /* Keep contact info left-aligned */
     }
     
     .contact-item {
-        justify-content: center;
+        justify-content: flex-start;
         text-align: left;
+        gap: 10px;
+    }
+    
+    /* Center social section */
+    .contact-social {
+        text-align: center; /* Center heading */
     }
     
     .social-links {
-        justify-content: center;
+        justify-content: center; /* Center icons */
     }
 }
 
 @media (max-width: 480px) {
     .contact-section {
         padding: 60px 15px;
+        margin: 0px;
     }
     
     .section-title-left,
@@ -255,7 +263,17 @@
         padding: 15px;
     }
     
+    .contact-item {
+        gap: 8px;
+    }
+    
+    /* Center social section on small screens */
+    .contact-social {
+        text-align: center;
+    }
+    
     .social-links {
+        justify-content: center;
         gap: 10px;
     }
     
