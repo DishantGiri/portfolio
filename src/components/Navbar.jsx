@@ -1,62 +1,81 @@
-import React, { useState } from 'react'
-import './Navbar.css'
-import mail_icon from '../assets/icon.png'
+import React, { useState } from 'react';
+import './Navbar.css';
+import mail_icon from '../assets/icon.png';
 
 const Navbar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-    const closeMenu = () => {
-        setIsMenuOpen(false);
-    };
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
-    return (
-        <div>
-            <nav className='nav-bar'>
-                {/* Logo or brand name can go here on the left */}
-                <div style={{flex: 1}}></div>
-                
-                <ul className="desktop-menu">
-                    <li>Home</li>
-                    <li>About Me</li>
-                    <li>Projects</li>     
-                    <li>Skills</li>        
-                </ul>
-                
-                <button className='btn contact'>
-                    <span>Contact Me</span>
-                    <img src={mail_icon} alt="" className='button-icon'/>
-                </button>
+  return (
+    <div className='a-tag'>
+      <nav className="nav-bar">
+        {/* Left spacer / Logo */}
+        <div style={{ flex: 1 }}></div>
 
-                {/* Hamburger Button - Right Side */}
-                <button 
-                    className={`hamburger ${isMenuOpen ? 'active' : ''}`}
-                    onClick={toggleMenu}
-                    aria-label="Toggle menu"
-                >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </nav>
+        {/* Desktop Menu */}
+        <ul className="desktop-menu">
+          <li>
+            <a href="#home">Home</a>
+          </li>
+          <li>
+            <a href="#about">About Me</a>
+          </li>
+          <li>
+            <a href="#skills">Skills</a>
+          </li>
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
+        </ul>
 
-            {/* Mobile Menu - Slides from right */}
-            <div className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}>
-                <ul>
-                    <li onClick={closeMenu}>Home</li>
-                    <li onClick={closeMenu}>About Me</li>
-                    <li onClick={closeMenu}>Projects</li>
-                    <li onClick={closeMenu}>Skills</li> {/* Added Skills item */}
-                </ul>
-                <button className='mobile-btn' onClick={closeMenu}>
-                    Contact Me
-                </button>
-            </div>
-        </div>
-    )
-}
+        {/* Contact Button */}
+        <button className="btn contact">
+          <span>Contact Me</span>
+          <img src={mail_icon} alt="" className="button-icon" />
+        </button>
 
-export default Navbar
+        {/* Hamburger Button - Mobile */}
+        <button
+          className={`hamburger ${isMenuOpen ? 'active' : ''}`}
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+
+      {/* Mobile Menu */}
+      <div className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}>
+        <ul>
+          <li onClick={closeMenu}>
+            <a href="#home">Home</a>
+          </li>
+          <li onClick={closeMenu}>
+            <a href="#about">About Me</a>
+          </li>
+          <li onClick={closeMenu}>
+            <a href="#skills">Skills</a>
+          </li>
+          <li onClick={closeMenu}>
+            <a href="#projects">Projects</a>
+          </li>
+        </ul>
+
+        <button className="mobile-btn" onClick={closeMenu}>
+          Contact Me
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;

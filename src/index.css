@@ -17,3 +17,10 @@
 body{
   background-color: black;
 }
+/* src/index.css or src/App.css */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* adjust this to your navbar height */
+}
+

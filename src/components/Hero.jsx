@@ -39,7 +39,7 @@ const Hero = () => {
   }, [currentText, isDeleting, currentSkillIndex, skills, typingSpeed]);
 
   return (
-    <div className="hero">
+    <div className="hero" id='home'>
       <div className="left">
         <img src={hero_image} alt="Dishant Giri" />
       </div>

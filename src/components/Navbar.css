@@ -13,7 +13,14 @@
   font-size: 1.3em;
   color: white;
 }
-
+.a-tag a{
+  color: inherit;          /* inherit navbar text color */
+  text-decoration: none;   /* remove underline */
+  cursor: pointer;         /* makes it look clickable */
+  margin: 0 15px;          /* spacing between links */
+  font-weight: 500;        /* optional styling */
+  transition: color 0.3s;  /* smooth hover effect */
+}
 .nav-bar ul{
   display: flex;
   gap: 20px;
