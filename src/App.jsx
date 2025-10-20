@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import Social from './components/Social'
 import Title from './components/Title'
 import About from './components/About'
+import Skills from './components/Skills'
 
 
 const App = () => {
@@ -14,6 +15,8 @@ const App = () => {
       <Social/>
       <Title title="About Me"/>
       <About/>
+      <Title title="Skills & Technologies"/>
+      <Skills/>
     </>
   )
 }
