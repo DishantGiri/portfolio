@@ -58,18 +58,10 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}>
         <ul>
-          <li onClick={closeMenu}>
-            <a href="#home">Home</a>
-          </li>
-          <li onClick={closeMenu}>
-            <a href="#about">About Me</a>
-          </li>
-          <li onClick={closeMenu}>
-            <a href="#skills">Skills</a>
-          </li>
-          <li onClick={closeMenu}>
-            <a href="#projects">Projects</a>
-          </li>
+          <a href="#home"><li onClick={closeMenu}>Home</li></a>
+          <a href="#about"><li onClick={closeMenu}>About Me</li></a>
+          <a href="#skills"><li onClick={closeMenu}>Skills</li></a>
+          <a href=""><li onClick={closeMenu}>Projects</li></a>
         </ul>
         <a href="#contact">
         <button className="mobile-btn" onClick={closeMenu}>
