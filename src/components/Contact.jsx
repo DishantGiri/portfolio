@@ -5,9 +5,9 @@ import linkedin from '../assets/linkedin1.png';
 import instagram from '../assets/instagram1.png';
 import github from '../assets/github1.png';
 import send_icon from '../assets/send.png';
-import location from '../assets/location.png'
-import mail from '../assets/email1.png'
-import phone from '../assets/phone1.png'
+import location from '../assets/location.png';
+import mail from '../assets/email1.png';
+import phone from '../assets/phone1.png';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -33,12 +33,12 @@ const Contact = () => {
     setSuccess(null);
 
     const data = {
-      access_key: 'a34216d8-d503-4dff-b344-b7c6cf81cd87', // Replace with your key
+      access_key: 'a34216d8-d503-4dff-b344-b7c6cf81cd87', // Replace with your Web3Forms key
       name: formData.name,
       email: formData.email,
       subject: formData.subject,
       message: formData.message,
-      redirect: '', // Optional: add a redirect URL if needed
+      redirect: '', // Optional: add a redirect URL
     };
 
     try {
@@ -70,6 +70,7 @@ const Contact = () => {
   return (
     <section id="contact" className="contact-section">
       <div className="contact-container">
+        {/* Contact Form */}
         <div className="contact-form-section">
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-title-background">
@@ -127,7 +128,7 @@ const Contact = () => {
 
             <button type="submit" className="submit-btn" disabled={loading}>
               {loading ? 'Sending...' : 'Send Message'}
-              <img src={send_icon} alt="" className='button-icon'/>
+              <img src={send_icon} alt="Send Icon" className="button-icon" />
             </button>
 
             {success === true && <p className="success-msg">Message sent successfully!</p>}
@@ -135,31 +136,33 @@ const Contact = () => {
           </form>
         </div>
 
-        {/* Contact Info & Social Links Section */}
+        {/* Contact Info */}
         <div className="contact-info-section">
           <h2 className="section-title-right">Get in Touch</h2>
           <div className="contact-info">
             <div className="contact-item">
               <div className="contact-icon">
-                <img src={mail} alt="" />
+                <img src={mail} alt="Email Icon" style={{ width: '24px', height: '24px' }} />
               </div>
               <div className="contact-details">
                 <h3>Email</h3>
-                <p>dishantgir22@gmail.com</p>
+                <p>dishantgiri22@gmail.com</p>
               </div>
             </div>
+
             <div className="contact-item">
               <div className="contact-icon">
-                <img src={phone} alt="" />
+                <img src={phone} alt="Phone Icon" style={{ width: '24px', height: '24px' }} />
               </div>
               <div className="contact-details">
                 <h3>Phone</h3>
                 <p>+977 9844945955</p>
               </div>
             </div>
+
             <div className="contact-item">
               <div className="contact-icon">
-                    <img src={location} alt="" />
+                <img src={location} alt="Location Icon" style={{ width: '24px', height: '24px' }} />
               </div>
               <div className="contact-details">
                 <h3>Location</h3>
@@ -168,6 +171,7 @@ const Contact = () => {
             </div>
           </div>
 
+          {/* Social Links */}
           <div className="contact-social">
             <h3>Follow Me</h3>
             <div className="social-links">
@@ -181,7 +185,7 @@ const Contact = () => {
                 <img src={github} alt="GitHub" />
               </a>
               <a href="https://www.instagram.com/dishant.java/" target="_blank" rel="noopener noreferrer">
-                <img src={instagram} alt="Instagram" style={{borderRadius:"40%"}}/>
+                <img src={instagram} alt="Instagram" style={{ borderRadius: "40%" }} />
               </a>
             </div>
           </div>
