@@ -1,6 +1,7 @@
 {
   "name": "portfolio",
-  "homepage": "https://www.dishantgiri.com.np",
+  "homepage": "https://www.dishantgiri.com.np/",
+  
   "private": true,
   "version": "0.0.0",
   "type": "module",
